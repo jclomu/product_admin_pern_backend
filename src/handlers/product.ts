@@ -9,7 +9,7 @@ export const createProduct = async (req: Request, res: Response) => {
 export const getProducts = async (req: Request, res: Response) => {
     const products = await Product.findAll({
         order: [
-            ['price', 'DESC']
+            ['name', 'DESC']
         ],
         attributes: { exclude: ['createdAt', 'updatedAt'] }
     })
